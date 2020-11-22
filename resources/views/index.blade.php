@@ -37,6 +37,14 @@
         <!-- jQuery and JS bundle w/ Popper.js -->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"/>
+
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.css" rel="stylesheet">
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
     </head>
     <body class="antialiased" style="background-color:#aaaaaa;">
         <div class="flex-center position-ref full-height">
@@ -48,7 +56,12 @@
                         <form action="/" method="get">
                             <div class="form-group">
                                 <label for="location_id">Input location here</label>
-                                <input type="text" class="form-control" name="location" id="location_id" placeholder="Location">
+                                <input type="text" class="form-control" name="location" id="location_id" placeholder="Location" required>
+                            </div>                  
+                            <div class="form-group">
+                                <label for="date_id">Input date here</label>
+                                <input class="date form-control" type="text" name="date" id="date_id">
+                                <p>If date is clear, times for this week will be displayed</p>
                             </div>
                             <button type="submit" class="btn btn-primary">Search</button>
                         </form>
@@ -96,5 +109,14 @@
                 </div>
             </div>
         </div>
+        <script type="text/javascript">
+
+            $('.date').datepicker({  
+
+            format: 'yyyy-mm-dd'
+
+            });  
+
+        </script> 
     </body>
 </html>
